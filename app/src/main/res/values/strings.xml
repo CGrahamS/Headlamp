@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Headlamp</string>
+    <string name="app_header">Welcome to Headlamp!</string>
+    <string name="app_intro">Enter a <b><i>server domain</i></b> or a <b><i>player\'s username</i></b> to find out more about them!</string>
 </resources>
