@@ -11,7 +11,7 @@
     tools:context="com.epicodus.headlamp.MainActivity">
 
     <TextView
-        android:textSize="24sp"
+        style="@style/CustomHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_header"
@@ -19,8 +19,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/mainHeader"
-        android:gravity="center" />
+        android:id="@+id/mainHeader" />
 
     <TextView
         style="@style/RegularFont"
@@ -52,6 +51,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:id="@+id/serverEditText"/>
 
         <Button

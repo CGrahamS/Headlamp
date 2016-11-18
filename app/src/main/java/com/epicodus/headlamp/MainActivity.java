@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,9 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mServerButton) {
             String serverDomain = mServerEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, ServerDetailsActivity.class);
-            intent.putExtra("serverDomain", serverDomain);
-            startActivity(intent);
+            if(serverDomain.trim().matches("")) {
+                Toast.makeText(MainActivity.this, "Enter a Server Domain Name!", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(MainActivity.this, ServerDetailsActivity.class);
+                intent.putExtra("serverDomain", serverDomain);
+                startActivity(intent);
+            }
+
         }
     }
 }

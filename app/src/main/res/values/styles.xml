@@ -18,4 +18,13 @@
         <item name="android:textSize">13.5sp</item>
     </style>
 
+    <style name="LargeFont">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="CustomHeader">
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Headlamp</string>
     <string name="app_header">Welcome to Headlamp!</string>
-    <string name="app_intro">Enter a <b><i>server domain</i></b> or a <b><i>player\'s username</i></b> to find out more about them!</string>
+    <string name="app_intro">Enter a Minecraft <b><i>server domain</i></b> or a <b><i>player\'s username</i></b> to find out more about them!</string>
     <string name="server_label"><b>Server Domain:</b></string>
     <string name="username_label"><b>Username:</b></string>
     <string name="submit_button">SUBMIT</string>
