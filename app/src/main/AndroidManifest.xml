@@ -18,9 +18,9 @@
         <activity android:name=".ServerDetailsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.headlamp.MainActivity">
-            </meta-data>
+                android:value="com.epicodus.headlamp.MainActivity"></meta-data>
         </activity>
+        <activity android:name=".UserDetailsActivity"></activity>
     </application>
 
 </manifest>

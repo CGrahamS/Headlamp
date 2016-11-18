@@ -12,6 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.serverEditText) EditText mServerEditText;
     @Bind(R.id.serverButton) Button mServerButton;
 
