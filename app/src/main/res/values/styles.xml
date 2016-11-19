@@ -8,10 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonStyle">@style/CustomButton</item>
     </style>
+    
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/CustomButton</item>
+    </style>
 
     <style name="CustomButton" parent="android:Widget.Holo.Button">
         <item name="android:background">@drawable/custom_button</item>
         <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="RegularFont">
@@ -20,6 +28,10 @@
 
     <style name="LargeFont">
         <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TitleFont">
+        <item name="android:textSize">40sp</item>
     </style>
 
     <style name="CustomHeader">

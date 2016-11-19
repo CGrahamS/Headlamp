@@ -1,11 +1,13 @@
 package com.epicodus.headlamp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.Bind;
@@ -13,6 +15,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
+    @Bind(R.id.appTitle) TextView mAppTitleTextView;
     @Bind(R.id.serverEditText) EditText mServerEditText;
     @Bind(R.id.serverButton) Button mServerButton;
     @Bind(R.id.userEditText) EditText mUserEditText;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        Typeface minecraftFont = Typeface.createFromAsset(getAssets(), "fonts/Minecrafter.Reg.ttf");
+        mAppTitleTextView.setTypeface(minecraftFont);
         mServerButton.setOnClickListener(this);
         mUserButton.setOnClickListener(this);
 
