@@ -12,8 +12,17 @@
 
     <TextView
         style="@style/CustomHeader"
+        android:text="Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userDetailTextView"/>
+
+    <ImageView
+        android:src="@drawable/steve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userDetailTextView"
+        android:id="@+id/userSkin"/>
+
 
 </RelativeLayout>

@@ -32,10 +32,11 @@
 
     <style name="TitleFont">
         <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="CustomHeader">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:gravity">center</item>
     </style>
 

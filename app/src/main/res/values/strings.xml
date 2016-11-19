@@ -7,7 +7,7 @@
     <string name="submit_button">SUBMIT</string>
     <string-array name="server_detail_labels">
         <item>Server Status: %0$s</item>
-        <item>Message of The Day: %0$s</item>
+        <item>Message of The Day: \n%0$s</item>
         <item>Players Online: %0$s</item>
         <item>Max Players: %0$s</item>
     </string-array>

@@ -1,6 +1,7 @@
 package com.epicodus.headlamp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,8 @@ public class ServerDetailsActivity extends AppCompatActivity {
         Log.i(TAG, "mServerDomain:" + mServerDomain);
         //set serverHeader textView text to new string variable
         mServerDomainTextView.setText(mServerDomain);
+        Typeface minecraftFont = Typeface.createFromAsset(getAssets(), "fonts/Minecrafter.Reg.ttf");
+        mServerDomainTextView.setTypeface(minecraftFont);
         //Populate serverDetails ArrayList with simulated values
         mServerDetailValues = getResources().getStringArray(R.array.server_detail_values);
         mServerDetailLabels = getResources().getStringArray(R.array.server_detail_labels);
