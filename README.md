@@ -17,8 +17,12 @@ This app allows Minecraft players to check the status of a server and look up so
 ## Setup/Installation Requirements
 
 1. Clone this repository to your desktop `git clone https://github.com/CGrahamS/headlamp.git`
-2. Open with Android studio.
-3. For best results in emulation use the 4" WVGA (Nexus S) API 23 profile.
+2. Open repository in Android studio.
+3. Confirm Gradle build is successful.
+4. Create a new AVD with the 4" WVGA (Nexus S) profile.
+5. Select the Marshmallow, API Level: 23, ABI x86
+6. Remove '4"' from the AVD name.
+7. Now you can Run the app!
 
 ## Known Bugs
 
