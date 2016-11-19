@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.serverEditText) EditText mServerEditText;
     @Bind(R.id.serverButton) Button mServerButton;
+    @Bind(R.id.userEditText) EditText mUserEditText;
+    @Bind(R.id.userButton) Button mUserButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mServerButton.setOnClickListener(this);
+        mUserButton.setOnClickListener(this);
 
     }
 
@@ -37,7 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("serverDomain", serverDomain);
                 startActivity(intent);
             }
-
+        } else if (v == mUserButton) {
+            String userName = mUserEditText.getText().toString();
+            if(userName.trim().matches("")) {
+                Toast.makeText(MainActivity.this, "Enter a User Name!", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(MainActivity.this, UserDetailsActivity.class);
+                intent.putExtra("userName", userName);
+                startActivity(intent);
+            }
         }
     }
 }

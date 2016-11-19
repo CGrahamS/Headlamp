@@ -44,6 +44,7 @@ public class ServerDetailsActivity extends AppCompatActivity {
         Log.i(TAG, "MOTD: " + mServerDetailValues[1]);
         Log.i(TAG, "OL P: " + mServerDetailValues[2]);
         Log.i(TAG, "Max Players: " + mServerDetailValues[3]);
+        //FIXME Formats first two strings with first argument twice. Likely because the variable names are not unique.
         for(int i = 0; i < mServerDetailLabels.length; i++) {
             mFormattedDetail = String.format(mServerDetailLabels[i], mServerDetailValues[0], mServerDetailValues[1], mServerDetailValues[2], mServerDetailValues[3]);
             mFormattedDetailArray.add(mFormattedDetail);
