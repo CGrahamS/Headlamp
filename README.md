@@ -1,5 +1,6 @@
-#![HEADLAMP](/app/src/main/res/drawable/headlamp.png?raw=true)
-
+<p align="center">
+  <img src=/app/src/main/res/drawable/headlamp.png/>
+</p>
 ### _Epicodus: Android (Week 1: Friday, Independent Project)_
 
 #### By _[**Caleb Stevenson**](https://github.com/CGrahamS)_
