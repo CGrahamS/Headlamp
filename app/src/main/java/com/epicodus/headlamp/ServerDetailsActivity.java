@@ -19,7 +19,6 @@ public class ServerDetailsActivity extends AppCompatActivity {
     private String mServerDomain;
     private String[] mServerDetailLabels;
     private String[] mServerDetailValues; //Simulated values. These will eventually be retrieved via an API Get request
-    private String mFormattedDetail;
     private List<String> mFormattedDetailArray = new ArrayList<String>();
     @Bind(R.id.serverDomainTextView) TextView mServerDomainTextView;
     @Bind(R.id.serverDetailListView) ListView mServerDetailListView;
@@ -44,15 +43,27 @@ public class ServerDetailsActivity extends AppCompatActivity {
         Log.i(TAG, "MOTD: " + mServerDetailValues[1]);
         Log.i(TAG, "OL P: " + mServerDetailValues[2]);
         Log.i(TAG, "Max Players: " + mServerDetailValues[3]);
-        //FIXME Formats first two strings with first argument twice. Likely because the variable names are not unique.
-        for(int i = 0; i < mServerDetailLabels.length; i++) {
-            mFormattedDetail = String.format(mServerDetailLabels[i], mServerDetailValues[0], mServerDetailValues[1], mServerDetailValues[2], mServerDetailValues[3]);
-            mFormattedDetailArray.add(mFormattedDetail);
+        String formattedStatus = String.format(mServerDetailLabels[0], mServerDetailValues[0]);
+        String formattedMOTD = String.format(mServerDetailLabels[1], mServerDetailValues[1]);
+        String formattedPlayers = String.format(mServerDetailLabels[2], mServerDetailValues[2]);
+        String formattedMaxPlayers = String.format(mServerDetailLabels[3], mServerDetailValues[3]);
+        mFormattedDetailArray.add(formattedStatus);
+        mFormattedDetailArray.add(formattedMOTD);
+        mFormattedDetailArray.add(formattedPlayers);
+        mFormattedDetailArray.add(formattedMaxPlayers);
+//        formatDetails(mServerDetailLabels, mServerDetailValues);
 
-            Log.i(TAG, "Formatted Array: " + mFormattedDetailArray.get(i));
-        }
         //create ArrayAdapter
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mFormattedDetailArray);
         mServerDetailListView.setAdapter(adapter);
     }
+    //FIXME Formats first two strings with first argument twice. Likely because the variable names are not unique.
+    private void formatDetails(String[] labels, String[] values) {
+        for(int i = 0; i < labels.length; i++) {
+            String j = Integer.toString(i);
+            String formattedDetail = String.format(labels[i], values[0], values[1], values[2], values[3]);
+            this.mFormattedDetailArray.add(formattedDetail);
+            Log.i(TAG, "Formatted Array: " + this.mFormattedDetailArray.get(i));
+        }
+    };
 }
