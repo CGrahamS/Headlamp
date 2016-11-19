@@ -1,6 +1,7 @@
 package com.epicodus.headlamp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,8 @@ public class UserDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_details);
         ButterKnife.bind(this);
-
+        Typeface minecraftFont = Typeface.createFromAsset(getAssets(), "fonts/Minecrafter.Reg.ttf");
+        mUserDetailTextView.setTypeface(minecraftFont);
         Intent intent = getIntent();
         mUserName = intent.getStringExtra("userName");
         Log.i(TAG, "Username: " + mUserName);

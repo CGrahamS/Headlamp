@@ -15,7 +15,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
-//    @Bind(R.id.appTitle) TextView mAppTitleTextView;
+    @Bind(R.id.serverLabel) TextView mServerLabel;
+    @Bind(R.id.userLabel) TextView mUserLabel;
     @Bind(R.id.serverEditText) EditText mServerEditText;
     @Bind(R.id.serverButton) Button mServerButton;
     @Bind(R.id.userEditText) EditText mUserEditText;
@@ -26,9 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-//        Typeface minecraftFont = Typeface.createFromAsset(getAssets(), "fonts/Minecrafter.Reg.ttf");
-//        mAppTitleTextView.setTypeface(minecraftFont);
+        Typeface minecraftFont = Typeface.createFromAsset(getAssets(), "fonts/Minecrafter.Reg.ttf");
+        mServerButton.setTypeface(minecraftFont);
+        mUserButton.setTypeface(minecraftFont);
+        mServerLabel.setTypeface(minecraftFont);
+        mUserLabel.setTypeface(minecraftFont);
         mServerButton.setOnClickListener(this);
         mUserButton.setOnClickListener(this);
 
