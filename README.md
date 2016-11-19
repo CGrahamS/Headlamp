@@ -1,4 +1,4 @@
-# _Headlamp_
+#![HEADLAMP](/app/src/main/res/drawable/headlamp.png?raw=true)
 
 ### _Epicodus: Android (Week 1: Friday, Independent Project)_
 
