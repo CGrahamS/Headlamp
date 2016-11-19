@@ -20,7 +20,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.headlamp.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".UserDetailsActivity"></activity>
+        <activity android:name=".UserDetailsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.headlamp.MainActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
