@@ -1,4 +1,4 @@
-package com.epicodus.headlamp;
+package com.epicodus.headlamp.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.epicodus.headlamp.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

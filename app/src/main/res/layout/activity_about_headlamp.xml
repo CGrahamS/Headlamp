@@ -8,21 +8,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.UserDetailsActivity">
+    tools:context="com.epicodus.headlamp.ui.AboutHeadlampActivity">
 
     <TextView
         style="@style/CustomHeader"
-        android:text="Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userDetailTextView"/>
+        android:text="@string/about_headlamp_header"
+        android:id="@+id/aboutHeaderTextView"/>
 
     <ImageView
-        android:src="@drawable/steve"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userDetailTextView"
-        android:id="@+id/userSkin"/>
+        android:layout_below="@+id/aboutHeaderTextView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/aboutImageView"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aboutImageView"
+        android:paddingTop="5dp"
+        android:text="@string/about_headlamp_body"
+        android:id="@+id/aboutBodyTextView"/>
 
 </RelativeLayout>

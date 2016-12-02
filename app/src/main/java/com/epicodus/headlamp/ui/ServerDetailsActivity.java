@@ -1,4 +1,4 @@
-package com.epicodus.headlamp;
+package com.epicodus.headlamp.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.epicodus.headlamp.R;
 
 import java.util.ArrayList;
 import java.util.List;
