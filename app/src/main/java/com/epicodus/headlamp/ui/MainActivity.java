@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mUserLabel.setTypeface(minecraftFont);
         mServerButton.setOnClickListener(this);
         mUserButton.setOnClickListener(this);
-
     }
 
     @Override
