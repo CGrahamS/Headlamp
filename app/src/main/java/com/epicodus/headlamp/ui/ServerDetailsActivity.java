@@ -1,4 +1,4 @@
-package com.epicodus.headlamp;
+package com.epicodus.headlamp.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,20 +9,34 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.epicodus.headlamp.R;
+import com.epicodus.headlamp.models.Server;
+import com.epicodus.headlamp.services.MCAPIService;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class ServerDetailsActivity extends AppCompatActivity {
     public static final String TAG = ServerDetailsActivity.class.getSimpleName();
-    private String mServerDomain;
+    private static String mServerDomain;
     private String[] mServerDetailLabels;
     private String[] mServerDetailValues; //Simulated values. These will eventually be retrieved via an API Get request
     private List<String> mFormattedDetailArray = new ArrayList<String>();
     @Bind(R.id.serverDomainTextView) TextView mServerDomainTextView;
     @Bind(R.id.serverDetailListView) ListView mServerDetailListView;
+
+    ArrayList<Server> mServers = new ArrayList<>();
+
+    public static String getServerDomain() {
+        return mServerDomain;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +56,6 @@ public class ServerDetailsActivity extends AppCompatActivity {
         //Populate serverDetails ArrayList with simulated values
         mServerDetailValues = getResources().getStringArray(R.array.server_detail_values);
         mServerDetailLabels = getResources().getStringArray(R.array.server_detail_labels);
-        Log.i(TAG, "Status: " + mServerDetailValues[0]);
-        Log.i(TAG, "MOTD: " + mServerDetailValues[1]);
-        Log.i(TAG, "OL P: " + mServerDetailValues[2]);
-        Log.i(TAG, "Max Players: " + mServerDetailValues[3]);
         String formattedStatus = String.format(mServerDetailLabels[0], mServerDetailValues[0]);
         String formattedMOTD = String.format(mServerDetailLabels[1], mServerDetailValues[1]);
         String formattedPlayers = String.format(mServerDetailLabels[2], mServerDetailValues[2]);
@@ -54,12 +64,39 @@ public class ServerDetailsActivity extends AppCompatActivity {
         mFormattedDetailArray.add(formattedMOTD);
         mFormattedDetailArray.add(formattedPlayers);
         mFormattedDetailArray.add(formattedMaxPlayers);
-//        formatDetails(mServerDetailLabels, mServerDetailValues);
+//      formatDetails(mServerDetailLabels, mServerDetailValues);
 
         //create ArrayAdapter
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mFormattedDetailArray);
         mServerDetailListView.setAdapter(adapter);
+        getServerInfo(mServerDomain);
     }
+
+    private void getServerInfo(String server) {
+        final MCAPIService mcapiService = new MCAPIService();
+        mcapiService.retrieveServerInfo(server, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                Log.v(TAG, "Failure");
+            }
+
+            //FIXME Receives no JSON data.
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, "JSON: " + jsonData);
+                    Log.v(TAG, "Response!");
+                    mServers = mcapiService.processResults(response);
+                    Log.v(TAG, response.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
     //FIXME Formats first two strings with first argument twice. Likely because the variable names are not unique.
     private void formatDetails(String[] labels, String[] values) {
         for(int i = 0; i < labels.length; i++) {

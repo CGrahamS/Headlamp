@@ -1,4 +1,4 @@
-package com.epicodus.headlamp;
+package com.epicodus.headlamp.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.epicodus.headlamp.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mUserLabel.setTypeface(minecraftFont);
         mServerButton.setOnClickListener(this);
         mUserButton.setOnClickListener(this);
-
     }
 
     @Override
